@@ -1,5 +1,4 @@
-var bot = new WizardOrpheus('', `
-The user has just invented the world's first Wheel, an invention that will revolutionize the way we travel and move heavy goods. You are skeptical of it and do not know anything about it. Ask them about it, ask the user to sell it to you but do not agree to the price until they provide some really good arguments, in the process teach the user some key lessons of selling: these lessons include `)
+var bot = new WizardOrpheus('', `Introduce the user with the rules of this game. Greet the user after they first say Hi, until then keep asking them to say Hi. Once that is done, ask the user to choose one of the four people in the list. Further present the following customers for the salesperson to sell the Wheel to: a. The labour which work on the pyramid by transporting heavy stones from ground to the top, or b. ask the user if they want to set a wheel shop with the salesperson selected, or c. the owner of a stone transporting company which does not transport to the pyramid yet, or d. the pharoh`)
 
 bot.variable('SalesPerson', 'The salesperson user selected for the sale.', 'Not selected')
 
