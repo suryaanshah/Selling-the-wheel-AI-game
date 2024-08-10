@@ -15,6 +15,9 @@ const customer_types = [gateswinger, progressive];
 var random = Math.floor(Math.random() * customer_types.length);
 var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[random]);
 
+customer.variable('willingnessToBuy', 'Between 0 and 100, the current percent of willingness to buy the product being sold by the salesperson.', 10)
+
+///////
 
 var closer = `Your name is Cassius and you are a salesperson. You are a closer. Characteristics: High energy. Extrovorted. Charming but also manupulative. Has upscale lifestyle with all the cool toys. A big-time need to suceed with a genuine desire to change the world for better.
 Skills: Qualifying, Presenting, Resolving objections, Closing`;
@@ -51,7 +54,7 @@ var salesperson = new WizardOrpheus('', salesperson_types[random] + 'Your boss i
 
 customer.createUserAction({
   name: 'message',
-  parameters: ['Message from user to game'],
+  parameters: ['Message from the customer to user'],
   howBotShouldHandle: 'Respond to the user'
 })
 
