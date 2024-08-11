@@ -11,6 +11,7 @@ Nevertheless, you are a potential customer of the type called progressive custom
 const customer_types = [gateswinger, progressive];
 const customer_id = Math.floor(Math.random() * customer_types.length);
 var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt when the wheel has not been invented yet, so you don't know what it is.` + ` Introduce yourself to the salesperson in one line. Don't explicitly share your willingness to buy the product.`);
+
 customer.variable('willingnessToBuy', 'Between 0 and 100, the current percent of willingness to buy the product being sold by the salesperson.', Math.floor(Math.random() * 10));
 
 ///////
@@ -24,6 +25,7 @@ Skills: Resolving objectionsm, Managing complex political relation`
 salesperson_types = [closer, wizard]
 
 var salesperson = new WizardOrpheus('', `You will generate tipes for selling for the user, based on the type of the customer.` + salesperson_types);
+
 // bot.variable('SalesPerson', 'The salesperson user selected for the sale.', 'Not selected')
 
 
@@ -48,20 +50,21 @@ customer.createUserAction({
   howBotShouldHandle: 'Respond to the user'
 })
 
-
 let customerResponse = '';
 customer.botAction('respond', 'Send a text response to the user', { message: 'What you want to say to the user' }, data => {
   // Add the bot's response to the conversation
-  customerResponse = data.message;
   document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
 })
 
 salesperson.createUserAction({
   name: 'context',
   parameters: ['The current state of the conversation'],
-  howBotShouldHandle: 'Give tips to the user by analyzing the conversation. '
+  howBotShouldHandle: 'Give sales tips to the user by analyzing the conversation. '
 })
 
+salesperson.botAction('tips', 'Share tips to the user on how to sell to the customer based on current state of conversation', { tip: 'What tips you want to give to the user' }, data => {
+  document.getElementById('conversation').innerHTML += '<p>' + '=== <br> <i>Tip:</i>' + data.tip + '</p>'
+})
 
 let userInput = '';
 document.getElementById('input').addEventListener('keyup', function(e) {
@@ -72,11 +75,4 @@ document.getElementById('input').addEventListener('keyup', function(e) {
     document.getElementById('input').value = ''
     salesperson.context('User input:' + userInput + 'Customer response:' + customerResponse + '. Share tips on how to respond.')
   }
-})
-
-
-
-salesperson.context('User input:' + userInput + 'Customer response:' + customerResponse + '. Share tips on how to respond.')
-salesperson.botAction('tips', 'Share tips to the user on how to sell to the customer', { message: 'What tips you want to give to the user' }, data => {
-  document.getElementById('conversation').innerHTML += '<p>' + '<i>Tips:</i>'+ data.message + '</p>'
 })
