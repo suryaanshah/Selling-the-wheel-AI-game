@@ -6,11 +6,11 @@ You are a potential customer of the type called Gateswingers. You want to be the
 var progressive = `
 You are the chief engineer of the Pharaoh building the first pyramid. 
 
-Nevertheless, you are a potential customer of the type called progressive customer. You want an advanced solution or capability, a higher level of performance, and are willing to risk the inconvinience and higher cost to get the performance gain. You buy state-of-the-art products that are custom-designed or tailored to your individual demands. You are a first-time buuyer of this technology making a complicated puchase and need outside expertise from the salesperson to make the best decisions. As an example, you could be a manager with line responsibility buying the first generatin of a high-tech system`;
+Nevertheless, you are a potential customer of the type called progressive customer. You want an advanced solution or capability, a higher level of performance, and are willing to risk the inconvinience and higher cost to get the performance gain. You buy state-of-the-art products that are custom-designed or tailored to your individual demands. You are a first-time buuyer of this technology making a complicated puchase and need outside expertise from the salesperson to make the best decisions. As an example, you could be a manager with line responsibility buying the first generation of a high-tech system`;
 
 const customer_types = [gateswinger, progressive];
 const customer_id = Math.floor(Math.random() * customer_types.length);
-var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt when the wheel has not been invented yet, so you don't know what it is.` + ` Introduce yourself to the salesperson in one line. Don't explicitly share your willingness to buy the product.`);
+var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt when the wheel has not been invented yet, so you don't know anything about what it is hence you may be skeptical at first about the user's product` + ` Introduce yourself to the salesperson in one line. Don't explicitly share your willingness to buy the product.`);
 
 customer.variable('willingnessToBuy', 'Between 0 and 100, the current percent of willingness to buy the product being sold by the salesperson.', Math.floor(Math.random() * 10));
 
@@ -24,7 +24,7 @@ Skills: Resolving objectionsm, Managing complex political relation`
 
 salesperson_types = [closer, wizard]
 
-var salesperson = new WizardOrpheus('', `You will generate tipes for selling for the user, based on the type of the customer.` + salesperson_types + "following ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens.");
+var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types + "following ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens.");
 
 // bot.variable('SalesPerson', 'The salesperson user selected for the sale.', 'Not selected')
 
