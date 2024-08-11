@@ -49,7 +49,8 @@ customer.createUserAction({
   howBotShouldHandle: 'Respond to the user'
 })
 
-var customerResponse;
+
+let customerResponse = '';
 customer.botAction('respond', 'Send a text response to the user', { message: 'What you want to say to the user' }, data => {
   // Add the bot's response to the conversation
   customerResponse = data.message;
