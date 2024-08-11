@@ -23,8 +23,7 @@ Skills: Resolving objectionsm, Managing complex political relation`
 
 salesperson_types = [closer, wizard]
 
-var salesperson = new WizardOrpheus('', `You will generate tipes for selling style for the user.` + salesperson_types);
-
+var salesperson = new WizardOrpheus('', `You will generate tipes for selling for the user, based on the type of the customer.` + salesperson_types);
 // bot.variable('SalesPerson', 'The salesperson user selected for the sale.', 'Not selected')
 
 
