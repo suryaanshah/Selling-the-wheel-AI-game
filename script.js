@@ -26,23 +26,6 @@ salesperson_types = [closer, wizard]
 
 var salesperson = new WizardOrpheus('', `You will generate tipes for selling for the user, based on the type of the customer.` + salesperson_types);
 
-// bot.variable('SalesPerson', 'The salesperson user selected for the sale.', 'Not selected')
-
-
-// bot.variable('SalesPersonSalary', "Salary of the selected sales person. If user selects Cassius then 50% cut of selling price, if selected Toby takes $10 for every customer interraction, Ben takes fixed salary of $1000 per sale, Caleb takes fixed salary of $500 per sale and sale comission of 5%", 0)
-
-
-// bot.variable('Customer', 'Current score. Changes (positive and negatively) as the user does things.', 0)
-
-
-// bot.variable('Neogtiated Price', 'Current score. Changes (positive and negatively) as the user does things.', 0)
-
-
-// bot.variable('TotalRevenue', 'Current score. Changes (positive and negatively) as the user does things.', 0)
-
-
-// bot.variable('TotalCost', 'Current score. Changes (positive and negatively) as the user does things.', 0)
-
 
 customer.createUserAction({
   name: 'message',
@@ -59,10 +42,10 @@ customer.botAction('respond', 'Send a text response to the user', { message: 'Wh
 salesperson.createUserAction({
   name: 'context',
   parameters: ['The current state of the conversation'],
-  howBotShouldHandle: 'Give sales tips to the user by analyzing the conversation. '
+  howBotShouldHandle: 'Give only one sales tip at a time to the user by analyzing the conversation between user and the customer. understand who asked what and who said what and respond based on that'
 })
 
-salesperson.botAction('tips', 'Share tips to the user on how to sell to the customer based on current state of conversation', { tip: 'What tips you want to give to the user' }, data => {
+salesperson.botAction('tips', 'Share one tip at a time to the user on how to sell to the customer based on current state of conversation', { tip: 'What tips you want to give to the user' }, data => {
   document.getElementById('conversation').innerHTML += '<p>' + '=== <br> <i>Tip:</i>' + data.tip + '</p>'
 })
 
@@ -73,6 +56,6 @@ document.getElementById('input').addEventListener('keyup', function(e) {
     customer.message(userInput)
     document.getElementById('conversation').innerHTML += '<p>' + userInput + '</p>'
     document.getElementById('input').value = ''
-    salesperson.context('User input:' + userInput + 'Customer response:' + customerResponse + '. Share tips on how to respond.')
+    salesperson.context('User input:' + userInput + ' Customer response:' + customerResponse + '. Share tips on how to respond.')
   }
 })
