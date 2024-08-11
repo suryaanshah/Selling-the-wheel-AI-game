@@ -54,6 +54,7 @@ let customerResponse = '';
 customer.botAction('respond', 'Send a text response to the user', { message: 'What you want to say to the user' }, data => {
   // Add the bot's response to the conversation
   document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
+  document.getElementById('willingnessToBuy').innerText = data.currentVariables.willingnessToBuy.value
 })
 
 salesperson.createUserAction({
@@ -63,7 +64,7 @@ salesperson.createUserAction({
 })
 
 salesperson.botAction('tips', 'Share one tip at a time to the user on how to sell to the customer based on current state of conversation', { tip: 'What tips you want to give to the user' }, data => {
-  document.getElementById('conversation').innerHTML += '<p>' + '=== <br> <i>Tip:</i>' + data.tip + '</p>'
+  document.getElementById('conversation').innerHTML += '<p>' + '=== <br> <i>Tip: </i>' + '<i>'+data.tip+'</i>' + '</p>'
 })
 
 let userInput = '';
