@@ -62,14 +62,15 @@ salesperson.createUserAction({
   howBotShouldHandle: 'Give tips to the user by analyzing the conversation. '
 })
 
-var userInput;
+
+let userInput = '';
 document.getElementById('input').addEventListener('keyup', function(e) {
   if (e.code == 'Enter') { // if the user presses enter
     userInput = document.getElementById('input').value
     customer.message(userInput)
-
     document.getElementById('conversation').innerHTML += '<p>' + userInput + '</p>'
     document.getElementById('input').value = ''
+    salesperson.context('User input:' + userInput + 'Customer response:' + customerResponse + '. Share tips on how to respond.')
   }
 })
 
