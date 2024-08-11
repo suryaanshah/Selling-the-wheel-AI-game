@@ -55,6 +55,8 @@ customer.botAction('respond', 'Send a text response to the user', { message: 'Wh
   // Add the bot's response to the conversation
   document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
   document.getElementById('willingnessToBuy').innerText = data.currentVariables.willingnessToBuy.value
+
+  document.body.style.backgroundColor = `rgba(0, 255, 0, ${data.currentVariables.willingnessToBuy.value * 1 / 100})`
 })
 
 salesperson.createUserAction({
@@ -65,8 +67,6 @@ salesperson.createUserAction({
 
 salesperson.botAction('tips', 'Share one tip at a time to the user on how to sell to the customer based on current state of conversation', { tip: 'What tips you want to give to the user' }, data => {
   document.getElementById('conversation').innerHTML += '<p>' + '=== <br> <i>Tip: </i>' + '<i>'+data.tip+'</i>' + '</p>'
-
-  document.body.style.backgroundColor = `rgba(0, 255, 0, ${data.currentVariables.willingnessToBuy.value * 1 / 100})`
 })
 
 let userInput = '';
