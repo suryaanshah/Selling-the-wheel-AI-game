@@ -10,9 +10,9 @@ Nevertheless, you are a potential customer of the type called progressive custom
 
 const customer_types = [gateswinger, progressive];
 const customer_id = Math.floor(Math.random() * customer_types.length);
-var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt when the wheel has not been invented yet, so you don't know anything about what it is hence you may be skeptical at first about the user's product` + ` Introduce yourself to the salesperson in one line. Don't explicitly share your willingness to buy the product.`);
+var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt when the wheel has not been invented yet, so you don't know anything about what it is hence you may be skeptical at first about the user's product` + ` Introduce yourself to the salesperson in one line. Don't explicitly share your willingness to buy the product.`+ `As you learn more about the product, increase or decrease your willingness to buy based on the costs and benefits.`+`Negotiate the costs with the salesperson`+`Eventually if you and the customer are set on a price of buying a number of wheels withing 1000000 dollars, you will buy the wheels`);
 
-customer.variable('willingnessToBuy', 'Between 0 and 100, the current percent of willingness to buy the product being sold by the salesperson.', Math.floor(Math.random() * 10));
+customer.variable('willingnessToBuy', 'Between 0 and 100, increases or decreases by 10, is the current willingness to buy the product being sold by the salesperson.', Math.floor(Math.random() * 10));
 
 ///////
 
@@ -24,7 +24,7 @@ Skills: Resolving objectionsm, Managing complex political relation`
 
 salesperson_types = [closer, wizard]
 
-var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types + "following ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens.");
+var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types + " Follow ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens.");
 
 // bot.variable('SalesPerson', 'The salesperson user selected for the sale.', 'Not selected')
 
@@ -65,6 +65,8 @@ salesperson.createUserAction({
 
 salesperson.botAction('tips', 'Share one tip at a time to the user on how to sell to the customer based on current state of conversation', { tip: 'What tips you want to give to the user' }, data => {
   document.getElementById('conversation').innerHTML += '<p>' + '=== <br> <i>Tip: </i>' + '<i>'+data.tip+'</i>' + '</p>'
+
+  document.body.style.backgroundColor = `rgba(0, 255, 0, ${data.currentVariables.willingnessToBuy.value * 1 / 100})`
 })
 
 let userInput = '';
