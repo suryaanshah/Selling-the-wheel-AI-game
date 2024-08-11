@@ -24,7 +24,24 @@ Skills: Resolving objectionsm, Managing complex political relation`
 
 salesperson_types = [closer, wizard]
 
-var salesperson = new WizardOrpheus('', `You will generate tipes for selling for the user, based on the type of the customer.` + salesperson_types);
+var salesperson = new WizardOrpheus('', `You will generate tipes for selling for the user, based on the type of the customer.` + salesperson_types + "following ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens.");
+
+// bot.variable('SalesPerson', 'The salesperson user selected for the sale.', 'Not selected')
+
+
+// bot.variable('SalesPersonSalary', "Salary of the selected sales person. If user selects Cassius then 50% cut of selling price, if selected Toby takes $10 for every customer interraction, Ben takes fixed salary of $1000 per sale, Caleb takes fixed salary of $500 per sale and sale comission of 5%", 0)
+
+
+// bot.variable('Customer', 'Current score. Changes (positive and negatively) as the user does things.', 0)
+
+
+// bot.variable('Neogtiated Price', 'Current score. Changes (positive and negatively) as the user does things.', 0)
+
+
+// bot.variable('TotalRevenue', 'Current score. Changes (positive and negatively) as the user does things.', 0)
+
+
+// bot.variable('TotalCost', 'Current score. Changes (positive and negatively) as the user does things.', 0)
 
 
 customer.createUserAction({
