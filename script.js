@@ -10,8 +10,7 @@ Nevertheless, you are a potential customer of the type called progressive custom
 
 const customer_types = [gateswinger, progressive];
 const customer_id = Math.floor(Math.random() * customer_types.length);
-var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + ` Introduce yourself to the salesperson in one line. Don't explicitly share your willingness to buy the product.`);
-
+var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt when the wheel has not been invented yet, so you don't know what it is.` + ` Introduce yourself to the salesperson in one line. Don't explicitly share your willingness to buy the product.`);
 customer.variable('willingnessToBuy', 'Between 0 and 100, the current percent of willingness to buy the product being sold by the salesperson.', Math.floor(Math.random() * 10));
 
 ///////
