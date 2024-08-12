@@ -8,7 +8,7 @@ You are the chief engineer of the Pharaoh building the first pyramid.
 
 Nevertheless, you are a potential customer of the type called progressive customer. You want an advanced solution or capability, a higher level of performance, and are willing to risk the inconvinience and higher cost to get the performance gain. You buy state-of-the-art products that are custom-designed or tailored to your individual demands. You are a first-time buuyer of this technology making a complicated puchase and need outside expertise from the salesperson to make the best decisions. As an example, you could be a manager with line responsibility buying the first generation of a high-tech system`;
 
-var relationship = `You are the vice president of engineering at the Goliath Sledge company, an established, large, rather convoluted organisation. Everyone at Goliath works by involving others and nobody makes a unilateral decision`
+var relationship = `You are the a engineering manager of the wheel department at Atlas Wagon company, the new leader in heavy duty transport. The wheel department handles everything to do with wheels that go on the Wagons.
 
 const customer_types = [gateswinger, progressive];
 const customer_id = Math.floor(Math.random() * customer_types.length);
