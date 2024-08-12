@@ -2,14 +2,17 @@ import { customer_id, customer_types } from './customers.js';
 import { salesperson_types } from './salespersons.js';
 import { technologies } from './technology.js';
 
-var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt where the invention of the wheel is at the following stage: ` + technologies[customer_id] + ` Introduce yourself to the salesperson in one line. As you learn more about the product, incrementally increase or decrease your willingness to buy based on the costs and benefits. Negotiate the costs with the salesperson as needed.`);
+var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt where the invention of the wheel is at the following stage: ` + technologies[customer_id] + ` Introduce yourself to the salesperson in one line. Negotiate the costs a little with the salesperson if needed later.`);
 
-customer.variable('willingnessToBuy', 'Between 0 and 100, increases or decreases by intervals of 10. It is your current willingness to buy the product being sold by the salesperson.', Math.floor(Math.random() * 10));
+const initial_willingness = Math.floor(Math.random() * 10)
+const initial_desired_price = [100000, 1000, 100, 10][customer_id];
+const initial_knowledge_about_wheel = [0, 25, 50, 75][customer_id];
 
-///////
+customer.variable('willingnessToBuy', 'Between 0 and 100,it is your current willingness to buy the product being sold by the salesperson.', initial_willingness);
 
+customer.variable('pricePerWheel', 'Higher than 0, the price per item that you are willing to pay.', initial_desired_price);
 
-var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types + " Follow ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens. Infer the type of customer based on the conversation. Your aim is to maximize the selling price and the number of wheels sold. There can be a trade-off between the two, so negotiate with the customer appropriately.`");
+var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types + " Follow ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens. Infer the type of customer based on the conversation and share particular tips on how to drive the conversation forward. Your aim is to maximize the selling price and the number of wheels sold. There can be a trade-off between the two, so negotiate with the customer appropriately.`");
 
 customer.createUserAction({
   name: 'message',
