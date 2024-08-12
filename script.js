@@ -1,17 +1,5 @@
-var gateswinger = `
-You are Mr. Marble living near ancient Egypt. You are the owner of a stone quarry. You cut limestones and offer granite sandstones and special marbles of the best quality. 
+import {customer_id, customer_types} from './customers.js';
 
-You are a potential customer of the type called Gateswingers. You want to be the first ones to buy new things, want oppoortunity, exclusivity, ultra-high prestige, and unique money-making pottential. You buy a one-of-a-kind product, a revolutionary technology, a service offered by nobody else on the planet, even if you have no prior experience with what is being bought (because it is the first), but have the personaly savvy or the resources to buy and make use of the product without extensive assistance on the part of the salesperson. As an example, you could be an entreprenuer or other visionary customers looking for fast-track opportunities`;
-
-var progressive = `
-You are the chief engineer of the Pharaoh building the first pyramid. 
-
-Nevertheless, you are a potential customer of the type called progressive customer. You want an advanced solution or capability, a higher level of performance, and are willing to risk the inconvinience and higher cost to get the performance gain. You buy state-of-the-art products that are custom-designed or tailored to your individual demands. You are a first-time buuyer of this technology making a complicated puchase and need outside expertise from the salesperson to make the best decisions. As an example, you could be a manager with line responsibility buying the first generation of a high-tech system`;
-
-var relationship = `You are the a engineering manager of the wheel department at Atlas Wagon company, the new leader in heavy duty transport. The wheel department handles everything to do with wheels that go on the Wagons.
-
-const customer_types = [gateswinger, progressive];
-const customer_id = Math.floor(Math.random() * customer_types.length);
 var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt when the wheel has not been invented yet, so you don't know anything about it yet.` + ` Introduce yourself to the salesperson in one line.` + `As you learn more about the product, incrementally increase or decrease your willingness to buy based on the costs and benefits.` + `Negotiate the costs with the salesperson as needed.`);
 
 customer.variable('willingnessToBuy', 'Between 0 and 100, increases or decreases by 10, is the current willingness to buy the product being sold by the salesperson.', Math.floor(Math.random() * 10));
