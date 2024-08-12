@@ -1,32 +1,15 @@
-import {customer_id, customer_types} from './customers.js';
-import {salesperson_types} from './salespersons.js';
+import { customer_id, customer_types } from './customers.js';
+import { salesperson_types } from './salespersons.js';
+import { technologies } from './technology.js';
 
-var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt when the wheel has not been invented yet, so you don't know anything about it yet.` + ` Introduce yourself to the salesperson in one line.` + `As you learn more about the product, incrementally increase or decrease your willingness to buy based on the costs and benefits.` + `Negotiate the costs with the salesperson as needed.`);
+var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt where the invention of the wheel is at the following stage: ` + technologies[customer_id] + ` Introduce yourself to the salesperson in one line. As you learn more about the product, incrementally increase or decrease your willingness to buy based on the costs and benefits. Negotiate the costs with the salesperson as needed.`);
 
-customer.variable('willingnessToBuy', 'Between 0 and 100, increases or decreases by 10, is the current willingness to buy the product being sold by the salesperson.', Math.floor(Math.random() * 10));
+customer.variable('willingnessToBuy', 'Between 0 and 100, increases or decreases by intervals of 10. It is your current willingness to buy the product being sold by the salesperson.', Math.floor(Math.random() * 10));
 
 ///////
 
 
-var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types + " Follow ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens. Your aim is to maximize the salesprice and the number of sales of the wheels. There can be a trade-off between the two, so negotiate with the customer appropriately.`");
-
-// bot.variable('SalesPerson', 'The salesperson user selected for the sale.', 'Not selected')
-
-
-// bot.variable('SalesPersonSalary', "Salary of the selected sales person. If user selects Cassius then 50% cut of selling price, if selected Toby takes $10 for every customer interraction, Ben takes fixed salary of $1000 per sale, Caleb takes fixed salary of $500 per sale and sale comission of 5%", 0)
-
-
-// bot.variable('Customer', 'Current score. Changes (positive and negatively) as the user does things.', 0)
-
-
-// bot.variable('Neogtiated Price', 'Current score. Changes (positive and negatively) as the user does things.', 0)
-
-
-// bot.variable('TotalRevenue', 'Current score. Changes (positive and negatively) as the user does things.', 0)
-
-
-// bot.variable('TotalCost', 'Current score. Changes (positive and negatively) as the user does things.', 0)
-
+var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types + " Follow ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens. Infer the type of customer based on the conversation. Your aim is to maximize the selling price and the number of wheels sold. There can be a trade-off between the two, so negotiate with the customer appropriately.`");
 
 customer.createUserAction({
   name: 'message',
