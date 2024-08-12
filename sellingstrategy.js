@@ -4,4 +4,4 @@ var strategy_wizard = "The strategy used by wizards/ sales-engineer can caputre 
 
 var strategy_relationshipbuilder = "The strategy is used by a relationshipbuilder, can capture upto 70 percent of the market. They are most suitable to sell to the relationship customer type. During market entry, there is plenty of competition especially from those selling almost similar products. As the market has warmed up, lots of sellers want a piece of it. A good niche is required to succeed that others may have overlooked. Core selling strategy: Be the customer's strongest ally. Work for solid relationships based on creative problem solving, dependable delivery, personalised attention to details. The customer is charged according to the added value delivered through the sales force."
 
-var strategy_crew = ""
+var strategy_crew = "The strategy used by a crew sales team and its captain, can capture upto 94 percent of the total market, while remaining 6 percent are new entries and others who need extra support. During market entry, if it is a new business, there will be a long uphill battle agains established competition."
