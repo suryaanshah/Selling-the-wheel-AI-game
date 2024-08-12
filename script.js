@@ -1,4 +1,5 @@
 import {customer_id, customer_types} from './customers.js';
+import {salesperson_types} from './salespersons.js';
 
 var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt when the wheel has not been invented yet, so you don't know anything about it yet.` + ` Introduce yourself to the salesperson in one line.` + `As you learn more about the product, incrementally increase or decrease your willingness to buy based on the costs and benefits.` + `Negotiate the costs with the salesperson as needed.`);
 
@@ -6,13 +7,6 @@ customer.variable('willingnessToBuy', 'Between 0 and 100, increases or decreases
 
 ///////
 
-var closer = `One of the salespersons' name is Cassius. He is a closer. Characteristics: High energy. Extrovorted. Charming but also manupulative. Has upscale lifestyle with all the cool toys. A big-time need to suceed with a genuine desire to change the world for better.
-Skills: Qualifying, Presenting, Resolving objections, Closing`;
-
-var wizard = `One of the salespersons' name is Tobi. She is like a wizard/ sales-engineer. Characteristics: Confident, Professional demeanor, Team leader, Enjoys the challenge of creating a unique solution for each customer and managing complexity.
-Skills: Resolving objectionsm, Managing complex political relation`
-
-salesperson_types = [closer, wizard]
 
 var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types + " Follow ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens. Your aim is to maximize the salesprice and the number of sales of the wheels. There can be a trade-off between the two, so negotiate with the customer appropriately.`");
 
