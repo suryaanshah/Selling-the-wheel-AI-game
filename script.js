@@ -1,5 +1,5 @@
 import { customer_id, customer_types } from './customers.js';
-import { salesperson_types } from './salespersons.js';
+import { salesperson_types, salesperson_names } from './salespersons.js';
 import { technologies } from './technology.js';
 
 var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt where the invention of the wheel is at the following stage: ` + technologies[customer_id] + ` Introduce yourself to the salesperson in one line. Negotiate the costs a little with the salesperson if needed later.`);
@@ -12,7 +12,7 @@ customer.variable('willingnessToBuy', 'Between 0 and 100,it is your current will
 
 customer.variable('pricePerWheel', 'Higher than 0, the price per item that you are willing to pay.', initial_desired_price);
 
-var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types + " Follow ideas from the book called Selling the Wheel by Jeff Cox and Howard Stevens. Infer the type of customer based on the conversation and share particular tips on how to drive the conversation forward. Your aim is to maximize the selling price and the number of wheels sold. There can be a trade-off between the two, so negotiate with the customer appropriately.`");
+var salesperson = new WizardOrpheus('', `You will generate tips for selling for the user, based on the type of the customer.` + salesperson_types[customer_id] + " Share tips on how to drive the conversation forward. The aim is to maximize the selling price and the number of wheels sold. There can be a trade-off between the two, so give tips to negotiate with the customer appropriately.`");
 
 customer.createUserAction({
   name: 'message',
@@ -36,7 +36,7 @@ salesperson.createUserAction({
 })
 
 salesperson.botAction('tips', 'Give only one tip at a time to the salesperson by analyzing the conversation between salesperson and the customer. Understand who asked what and who said what and respond based on that.', { tip: 'What tips you want to give to the salesperson on making the sale.' }, data => {
-  document.getElementById('conversation').innerHTML += '<p>' + '=== <br> <i>Tip: </i>' + '<i>' + data.tip + '</i>' + '</p>'
+  document.getElementById('conversation').innerHTML += '<p>' + '=== <br> <i>' + salesperson_names[customer_id] + "'s tip: " + data.tip + "</i></p>"
 })
 
 let userInput = '';
