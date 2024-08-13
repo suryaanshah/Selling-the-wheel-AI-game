@@ -2,13 +2,13 @@ import { customer_id, customer_types } from './customers.js';
 import { salesperson_types, salesperson_names } from './salespersons.js';
 import { technologies } from './technology.js';
 
-var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt where the invention of the wheel is at the following stage: ` + technologies[customer_id] + ` Introduce yourself to the salesperson in one line. Negotiate the costs a little with the salesperson if needed later.`);
+var customer = new WizardOrpheus('', `Your name is Alex.` + customer_types[customer_id] + `You live in ancient Egypt where the invention of the wheel is at the following stage: ` + technologies[customer_id] + ` When greeting, you introduce yourself in one line only. See if you are interested in buying the wheel technology solution that the salesperson offers as the conversation progresses and increase or decrease your interest to buy the wheels accordingly. Negotiate the costs a little with the salesperson if needed as you become more interested.`);
 
-const initial_willingness = Math.floor(Math.random() * 10)
+const initial_interest = Math.floor(Math.random() * 10)
 const initial_desired_price = [100000, 1000, 100, 10][customer_id];
 const initial_knowledge_about_wheel = [0, 25, 50, 75][customer_id];
 
-customer.variable('willingnessToBuy', 'Between 0 and 100,it is your current willingness to buy the product being sold by the salesperson.', initial_willingness);
+customer.variable('interestToBuy', 'Between 0 and 100, it is your current level of interest and enthusiasm to buy the product being sold by the salesperson.', initial_interest);
 
 customer.variable('pricePerWheel', 'Higher than 0, the price per item that you are willing to pay.', initial_desired_price);
 
@@ -24,9 +24,9 @@ let customerResponse = '';
 customer.botAction('respond', 'Send a text response to the user', { message: 'What you want to say to the user' }, data => {
   // Add the bot's response to the conversation
   document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
-  document.getElementById('willingnessToBuy').innerText = data.currentVariables.willingnessToBuy.value
+  document.getElementById('willingnessToBuy').innerText = data.currentVariables.interestToBuy.value
 
-  document.body.style.backgroundColor = `rgba(0, 255, 0, ${data.currentVariables.willingnessToBuy.value * 1 / 100})`
+  document.body.style.backgroundColor = `rgba(0, 255, 0, ${data.currentVariables.interestToBuy.value * 1 / 100})`
 })
 
 salesperson.createUserAction({
