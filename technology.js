@@ -10,3 +10,5 @@ var incremantal_growth = "After the technology has passed the phase of 'fast gro
 var maturity = "After the technology has been used widely, it is standardised and reches the stage of type 'maturity'. It has near universal acceptance within the culture, one is considered eccentric if you do not use it. Advancements are few and might be met with resistance. The choices regarding features and option are reduced as they become standard to the essential product. Products are simple to use, even 'idiot-proof'. However, this causes the technology to become frozen; thereby creating opportunities for the next technological wave that will force its obsolescence, and disrupt the market. As an example, when wooden wheels have become standardized and used by everyone in all sorts of transportation activities. It may be disrupted by the introdcution of newer rubber wheels in the future."
 
 export var technologies = [birth, fast_growth, incremantal_growth, maturity];
+
+export var technology_stage_names = ["Birth", "Fast Growth", "Incremental Growth", "Maturity"];
