@@ -1,0 +1,1 @@
+marketing_closer = `The marketing done by closers is to present an ideal company image that is pioneering, progressive, polished, and well financed, and having the potential for mega-success. To geneerate sales leads, they demonstrate the technology, show the potential, and create events for PR.`
