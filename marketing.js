@@ -1,1 +1,3 @@
 marketing_closer = `The marketing done by closers is to present an ideal company image that is pioneering, progressive, polished, and well financed, and having the potential for mega-success. To geneerate sales leads, they demonstrate the technology, show the potential, and create events for PR.`
+
+marketing_wizard = `The marketing done by wizards/ sales-engineer is to present an ideal company image that is smart, progressive, superior with advanced technology, and a team of experts to support the customer. They offer custom solutions much better than the current standard. To generate sales leads, they offer free knowledge through articles for journals, mails, speaking engagement, and problem-solution style advertising.`
