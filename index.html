@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Selling the wheel game</title>
+  <title>Selling the Wheel game</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 
 
@@ -13,55 +13,63 @@
   <meta name="description" content="Learn about Sales with this AI game">
   <meta name="author" content="Suryaansh Chawla">
 
-  
 </head>
 
 <body>
-  <p>
-    You are Max. You have just invented the Wheel, an invention that you believe will revolutionize the way we travel
-    and move heavy goods. Sell them and make a fortune!
-  <p>
-    For each customer you can choose one from a sales team of four people.
-  </p>
+<p>
+  You are <b>Max</b>. You are the inventor of the Wheel in ancient Egypt. You believe this is an invention that will
+  revolutionize the way we travel and move heavy goods. While you think it is easy to sell the wheel as its benefits
+  are obvious, you learn that it's not so obvious to the potential customers. <b>Go test your skills and sell the wheels
+  to make a fortune!</b>
+<p>
+  Each time you play you may encounter a different customer. You will be told about how much the wheel technology has
+  progressed since your invention. Use this information to sell accordingly. You will also get tips from one of your sales team members to help sell you to this
+  customer. Your sales team consists of four people:
+</p>
 
-  <ul>
-    <li><b>Cassius</b>: High energy. Extrovorted. Charming but also manupulative. Has upscale lifestyle with all the
-      cool toys. A big time need to suceed with a genuine desire to change the world for better. <div class="skills"
-        id="Cassius">Skills: Qualifying, Presenting, Resolving objections, Closing</div>
-    </li>
+<ul>
+  <li><b>Cassius</b>: High energy. Extrovorted. Charming but also manupulative. Has upscale lifestyle with all the
+    cool toys. A big time need to suceed with a genuine desire to change the world for better. <div class="skills"
+                                                                                                    id="Cassius">Skills: Qualifying, Presenting, Resolving objections, Closing</div>
+  </li>
 
-    <li><b>Tobi</b>: Confident, Professional demeanor, Team leader, Enjoys the challenge of creating a unique solution
-      for each customer and managing complexity. <div class="skills" id="Toby">Skills: Resolving objectionsm, Managing
-        complex political relations. </div>
-    </li>
+  <li><b>Tobi</b>: Confident, Professional demeanor, Team leader, Enjoys the challenge of creating a unique solution
+    for each customer and managing complexity. <div class="skills" id="Toby">Skills: Resolving objectionsm, Managing
+      complex political relations. </div>
+  </li>
 
-    <li><b>Ben</b>: Hard working, civic minded, optimist, likes a routine and hates complexity. Prefers sales rather
-      than management. <div class="skills" id="Ben"> Skills: Resolving objections, Closing and Developing customer
-        relationships. Sells with the belief that the customer always comes first.</div>
-    </li>
+  <li><b>Ben</b>: Hard working, civic minded, optimist, likes a routine and hates complexity. Prefers sales rather
+    than management. <div class="skills" id="Ben"> Skills: Resolving objections, Closing and Developing customer
+      relationships. Sells with the belief that the customer always comes first.</div>
+  </li>
 
-    <li><b>Caleb</b>: Upbeat and down to earth, Average everyday person like the customer. Not an overachiever, works to
-      make money to have fun on days off.<div class="skills" id="Caleb"> Skills: Handing social fatigue so as to
-        withstand constant contact with the public</div>
-    </li>
-  </ul>
-  <b><i>Start by saying "Hi"</i></b>
+  <li><b>Caleb</b>: Upbeat and down to earth, Average everyday person like the customer. Not an overachiever, works to
+    make money to have fun on days off.<div class="skills" id="Caleb"> Skills: Handing social fatigue so as to
+      withstand constant contact with the public</div>
+  </li>
+</ul>
+<hr>
+<div id="stagetech">
+</div>
 
-  <!-- <br>But you are not able to sell it to anybody. All people use the old methods like camels, elephants, and strong men to move goods. Your job is to sell the wheel what will you do? -->
-  </p>
-  <div id="conversation">
-  </div>
+<b><i>Start by introducing yourself. </i></b>
 
-  <textarea id="input" placeholder="Type here..."></textarea>
-  <br>
-  <i>Press enter to submit...</i>
+<!-- <br>But you are not able to sell it to anybody. All people use the old methods like camels, elephants, and strong men to move goods. Your job is to sell the wheel what will you do? -->
+</p>
 
-  <p>
-    Willingness to buy: <span id="willingnessToBuy">0</span>% 
-  </p>
+<div id="conversation">
+</div>
 
-  <script src="https://wizard-orpheus.hackclub.dev/wizard_orpheus.js"></script>
-  <script type="module" src="script.js"></script>
+<textarea id="input" placeholder="Type here..."></textarea>
+<br>
+<i>Press enter to submit...</i>
+
+<p>
+  Willingness to buy: <span id="willingnessToBuy">0</span>%
+</p>
+
+<script src="https://wizard-orpheus.hackclub.dev/wizard_orpheus.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 
 </html>
