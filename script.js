@@ -13,7 +13,7 @@ const initial_knowledge_about_wheel = [0, 25, 50, 75][customer_id];
 
 var customer = new WizardOrpheus('', `Your name is Alex, a potential customer for purchasing wheels.` + customer_types[customer_id] + `You live in ancient Egypt where the invention of the wheel is at the following stage: ` + technologies[customer_id] + ` When greeting, you introduce yourself in one line only. Your current level of knowledge about the wheels is at ` + initial_knowledge_about_wheel + ` out of a hundered. Your current interest in buying the wheels offered by the salesperson is at ` + initial_interest + ` percent. It increases or decreases with every interaction. ` + objections[customer_id] + `. You are initially willing to pay upto ` + initial_desired_price + ` units of currency per wheel. Negotiate the costs a little with the salesperson if needed as you become more interested.`);
 
-customer.variable('interestToBuy', 'Between 0 and 100, it is your current level of interest and enthusiasm to buy the product being sold by the salesperson. Changes by approximately 5 percent with every interaction. Once above 89 percent, it will rarely go down.', initial_interest);
+customer.variable('interestToBuy', 'Between 0 and 100, it is your current level of interest and enthusiasm to buy the product being sold by the salesperson. Changes by atleast 5 percent with every interaction. Once above 80 percent, it will rarely go down. Once reached 100, it stays there.', initial_interest);
 
 customer.variable('pricePerWheel', 'Higher than 0, the price per item that you are willing to pay.', initial_desired_price);
 
