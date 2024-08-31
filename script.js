@@ -34,6 +34,12 @@ customer.botAction('respond', 'Send a text response to the user', { message: 'Wh
   document.getElementById('willingnessToBuy').innerText = data.currentVariables.interestToBuy.value;
 
   document.body.style.backgroundColor = `rgba(0, 255, 0, ${data.currentVariables.interestToBuy.value * 1 / 100})`
+
+  if (data.currentVariables.interestToBuy.value >= 100) {
+    document.getElementById('input').classList.add('hidden');
+    document.getElementById('wintext').classList.remove('hidden');
+  }
+  
 })
 
 salesperson.createUserAction({
