@@ -1,7 +1,7 @@
 # Selling the Wheel AI Game
-A text-based AI game about selling inspired from Selling the wheel book using HackClub's Orpheus.
+A text-based AI game about selling inspired from `Selling the Wheel` book using `HackClub's Orpheus`.
 
-Use this game to practice your selling skills and learn new sales strategies.
+Use this game to practice your selling skills and learn new sales strategies!
 
 # Description - The story 
 When a brand-new technology is created (for example when the wheel was invented) it goes through four phases: birth, fast-growth, incremental-growth, maturity.
@@ -15,6 +15,9 @@ There are six bedrock questions for sales:
 + What added values does our salesperson have to offer to make a sale?
 
 Each question is equally important. Selling is an art. This game and the book celebrates that art. 
+
+![image](https://github.com/user-attachments/assets/f29f7e34-15b0-41d6-974d-949397b30691)
+
 
 # How to play this game
 
