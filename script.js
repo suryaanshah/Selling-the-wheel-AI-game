@@ -29,6 +29,7 @@ customer.createUserAction({
 let customerResponse = '';
 customer.botAction('respond', 'Send a text response to the user', { message: 'What you want to say to the user' }, data => {
   // Add the bot's response to the conversation
+  customerResponse = data.message;
   document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
   document.getElementById('willingnessToBuy').innerText = data.currentVariables.interestToBuy.value;
 
