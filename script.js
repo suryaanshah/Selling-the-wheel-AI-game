@@ -53,14 +53,18 @@ salesperson.botAction('tips', 'Give only one tip at a time to the salesperson by
 })
 
 let userInput = '';
-document.getElementById('input').addEventListener('keydown', function(e) {
-  if (e.code == 'Enter' || e.keyCode === 13) { // if the user presses enter
-    e.preventDefault();) { // if the user presses enter
+function handleSubmit() {
+  userInput = document.getElementById('input').value
+  customer.message(userInput)
+  document.getElementById('conversation').innerHTML += '<p>' + userInput + '</p>'
+  document.getElementById('input').value = '';
+  salesperson.context('User input:' + userInput + ' Customer response:' + customerResponse + '. Share tips on how to respond.')
+}
+
+document.getElementById('submitButton').addEventListener('click', handleSubmit);
+document.getElementById('input').addEventListener('keyup', function(e) {
+  if (e.code == 'Enter') { // if the user presses enter
     e.preventDefault();
-    userInput = document.getElementById('input').value
-    customer.message(userInput)
-    document.getElementById('conversation').innerHTML += '<p>' + userInput + '</p>'
-    document.getElementById('input').value = ''
-    salesperson.context('User input:' + userInput + ' Customer response:' + customerResponse + '. Share tips on how to respond.')
+    handleSubmit();
   }
 })
