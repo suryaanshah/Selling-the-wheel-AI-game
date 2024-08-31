@@ -112,6 +112,35 @@ li {
     background-color: #0f3d6b; 
 }
 
+#wintext {
+    padding: 20px;
+    text-align: center;
+    background-color: #d0f44e;
+    border: 2px solid #e8a87c;
+    border-radius: 15px;
+    color: #4149b4;
+    font-size: 24px;
+    margin: 20px auto;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+#wintext b {
+    color: #e27d60;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
 
 @media (max-width: 768px) {
     h1 {
