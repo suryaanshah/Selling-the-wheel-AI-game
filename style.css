@@ -100,8 +100,8 @@ li {
     margin: 20px auto;
     padding: 10px 20px;
     font-size: 16px;
-    color: #fff;
-    background-color: #41b3a3;
+    color: #fff; 
+    background-color: #002244; 
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -109,7 +109,7 @@ li {
 }
 
 #submitButton:hover {
-    background-color: #36a29d;
+    background-color: #0f3d6b; 
 }
 
 
