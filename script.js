@@ -55,6 +55,7 @@ salesperson.botAction('tips', 'Give only one tip at a time to the salesperson by
 let userInput = '';
 document.getElementById('input').addEventListener('keyup', function(e) {
   if (e.code == 'Enter') { // if the user presses enter
+    e.preventDefault();
     userInput = document.getElementById('input').value
     customer.message(userInput)
     document.getElementById('conversation').innerHTML += '<p>' + userInput + '</p>'
