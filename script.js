@@ -3,6 +3,7 @@ import { salesperson_types, salesperson_names } from './salespersons.js';
 import { technologies, technology_stage_names } from './technology.js';
 import { objections } from './objections.js';
 
+let gameOngoing = true;
 
 document.getElementById('stagetech').innerHTML += '<p>' + '<b> Stage of wheel technology:</b><i> ' + technology_stage_names[customer_id] + "</i>. " + technologies
 [customer_id] + "</p>"
@@ -31,15 +32,17 @@ customer.botAction('respond', 'Send a text response to the user', { message: 'Wh
   // Add the bot's response to the conversation
   customerResponse = data.message;
   document.getElementById('conversation').innerHTML += '<p>' + data.message + '</p>'
-  document.getElementById('willingnessToBuy').innerText = data.currentVariables.interestToBuy.value;
-
-  document.body.style.backgroundColor = `rgba(0, 255, 0, ${data.currentVariables.interestToBuy.value * 1 / 100})`
-
-  if (data.currentVariables.interestToBuy.value >= 100) {
-    document.getElementById('input').classList.add('hidden');
-    document.getElementById('wintext').classList.remove('hidden');
-  }
+  if (gameOngoing) {
+    document.getElementById('willingnessToBuy').innerText = data.currentVariables.interestToBuy.value;
+    document.body.style.backgroundColor = `rgba(0, 255, 0, ${Math.min(100, data.currentVariables.interestToBuy.value) * 1 / 100})`
+}
   
+if (data.currentVariables.interestToBuy.value >= 100) {
+  gameOngoing = false;
+  document.getElementById('input').classList.add('hidden');
+  document.getElementById('wintext').classList.remove('hidden');
+  document.getElementById('submitButton').classList.add('hidden');
+}
 })
 
 salesperson.createUserAction({
